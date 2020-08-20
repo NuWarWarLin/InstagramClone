@@ -33,6 +33,28 @@ body {
 }
 
 .nav-link:hover {
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   background-color:whitesmoke;
 }
+
+.nav-position {
+    float: left !important;
+    padding: 4px;
+  }
+
+footer {
+    width: 100%;
+    height: 52px;
+    bottom: 0 !important;
+    position: fixed;
+    background-color:whitesmoke;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  footer p {
+    margin-bottom: 0;
+    color:white;
+    font-family: Sans-Serif,Seri, Arial;
+  }
