@@ -1,0 +1,37 @@
+<div class="container mt-6">
+    <%= form_with(model: @user, local: true) do |f| %>
+        <div class="row justify-content-md-center">
+            <div class="col-5 mt-6">
+                <div class="card shadow text-center">
+                    <div class="card-header">
+                        <p class="head">Instagram</p>
+                        <p class="text">Sign up to see photos and videos from your friends.</p>
+                    </div>
+                    <div class="card-body", style="height: 250px;">
+                        <p class="card-text text-left"><%= f.text_field:username,
+                        class: "form-control shadow-sm py-4 mt-2", placeholder: "Enter a username"%></p>
+                        <p class="card-text text-center"><%= f.email_field :email,
+                        class: "form-control shadow-sm py-4 mb-4", placeholder: "Enter your email address" %></p>
+                        <p class="card-text text-center"><%= f.password_field :password,
+                        class: "form-control shadow-sm py-4 mb-4", placeholder: "Choose a password" %></p>
+                        <p class="card-text text-left mt-4">
+                            <%= f.label :upload_profile_picture, class: "badge badge-pill badge-secondary p-3",
+                                        for: "upload-photo" %>
+                            <%= f.hidden_field :profile_cache %>
+                            <%= f.file_field :profile, id: "upload-photo" %>
+                        </p>
+                        <p>
+                            <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: "btn btn-primary text-white btn-lg btn-block login-text" ) %>
+                        </p>
+                        <p class="text">By signing up, you agree to our Terms, Data Policy and Cookies Policy.</p>
+                        <div class="card-footer">
+                            <p class="text">
+                                Have an account? <%= link_to 'Log In', login_path %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
