@@ -1,27 +1,30 @@
 <nav class="navbar sticky-top shadow-sm navbar-expand-md navbar-light bg-light">
-  <%= link_to 'Facebook', images_path, class: "nav-link my-text col-md-4" %>
+  <%= link_to 'Facebook', images_path, class: "nav-link nav-text col-md-4" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse col-md-8" id="navbarNav">
       <div class="navbar-nav col-md-8">
         <div class="nav-item col-md-2">
-          <%= link_to 'Users', users_path, class: "nav-link my-text" %>
+          <%= link_to 'Users', users_path, class: "nav-link nav-text" %>
         </div>
         <div class="nav-item col-md-2">
-          <%= link_to 'Home', images_path, class: "nav-link my-text" %>
+          <%= link_to 'Home', images_path, class: "nav-link nav-text" %>
         </div>
         <div class="nav-item col-md-3">
-          <%= link_to 'Create Post', new_image_path, class: "nav-link my-text " %>
+          <%= link_to 'Create Post', new_image_path, class: "nav-link nav-text " %>
         </div>
       </div>
       <div class="navbar-nav col-md-4">
         <div class="nav-item col-md-5">
-          <%= link_to "#{current_user.username}", user_path(current_user),
-          class: "nav-link my-text" %>
+            <%= link_to image_tag(current_user.profile.url, size: "29",
+                          class: "rounded-circle ml-0"), user_path(current_user),
+                          class: "nav-link nav-position pl-5" %>
+            <%= link_to "#{current_user.username}", user_path(current_user),
+                          class: "nav-link nav-text" %>
         </div>
         <div class="nav-item col-md-5">
-          <%= link_to 'Log Out', logout_path, class: "nav-link my-text", method: :delete %>
+          <%= link_to 'Log Out', logout_path, class: "nav-link nav-text", method: :delete %>
         </div>
       </div>
   </div>
